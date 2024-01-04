@@ -4,7 +4,7 @@ import NunitoBlack from 'fonts/Nunito-Black.ttf';
 
 export const colors = {
     white: "#fff",
-    darkGrey: "#1a1c20",
+    darkGrey: "#1a202c",
     deepDarkGrey: "#404040",
     blueShade1: "#215973",
     blueShade2: "#6fadc6",
