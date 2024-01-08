@@ -1,7 +1,7 @@
 ---
 type: 'page'
 date: '2023-12-26'
-image: '../images/about-image.jpg'
+image: '../images/about.jpg'
 slug: 'about'
 title: 'About this Blog'
 ---
