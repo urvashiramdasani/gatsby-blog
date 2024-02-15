@@ -28,8 +28,8 @@ const BlogPostCard = ({ slug, title, date, readingTime, excerpt, image }) => {
               {readingTime}
             </ReadingTimeWrapper>
           </StatWrapper>
+          <p>{excerpt}</p>
         </TextWrapper>
-        <p>{excerpt}</p>
       </CardWrapper>
     </>
   )

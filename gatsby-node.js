@@ -54,7 +54,7 @@ exports.createPages = async({ graphql, actions }) => {
 
   // Create the individual posts and pages
   allPosts.forEach(({ node }) => {
-    if(node.fronmatter.published) {
+    if(node.frontmatter.published) {
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/Post.js`),
@@ -66,7 +66,7 @@ exports.createPages = async({ graphql, actions }) => {
     }
   }) 
 
-  allPages.forEach(({ node }) => {
+  Array.from(allPages).forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/Page.js`),
@@ -76,6 +76,23 @@ exports.createPages = async({ graphql, actions }) => {
       },
     })
   }) 
+
+  // Create archive pages
+  const postsPerPage = 2;
+  const numPages = Math.ceil(allPosts.length / postsPerPage)
+
+  Array.from({length: numPages}).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/` : `/${i + 1}`,
+      component: path.resolve(`./src/templates/Home.js`),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
 }
 
 // For absolute imports

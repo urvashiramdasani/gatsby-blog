@@ -8,7 +8,7 @@ import NightIcon from 'images/nightmode.svg'
 // Styles
 
 const ModeButton = ({ darkMode, setDarkMode }) => (
-    <ImgButton src={darkMode ? NightIcon : DayIcon} alt="mode" onClick={() => setDarkMode(prev = !prev) } />
+    <ImgButton src={darkMode ? NightIcon : DayIcon} alt="mode" onClick={() => setDarkMode(prev => !prev) } />
 )
 
 export default ModeButton;
